@@ -75,6 +75,7 @@ docker-compose up -d
 # Verificar se os containers estão rodando
 docker-compose ps
 ```
+   > 💡 **Dica:** Use a extenção "Database Management for MySQL/MariaDB, PostgreSQL" no VSCode ou Cursor para acessar o banco do PGVector
 
 Aguarde alguns segundos para que o banco inicialize completamente e a extensão `vector` seja criada.
 
@@ -112,7 +113,7 @@ python src/chat.py
 ```
 ================================================================================
                       Bem-vindo ao nosso chat via terminal!
-                   Quando quiser encerrar, digite 'sair'
+                      Quando quiser encerrar, digite 'sair'
 ================================================================================
 
 1) Qual sua dúvida? (digite 'sair' para encerrar): 
