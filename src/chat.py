@@ -1,10 +1,19 @@
+# ================================================================== #
+# Desafio MBA Engenharia de Software com IA - Full Cycle             #
+# ================================================================== #
+# Autor: Jesse de Oliveira                                           #
+# Email: jesse.oli@hotmail.com                                       #
+# Data: 03/09/2025                                                   #
+# Versão: 1.0.0                                                      #
+# ================================================================== # 
+
 from search import search_prompt
 
 def main():
     print("\n")
     print("="*80)
     print(" " * 22 + "Bem-vindo ao nosso chat via terminal!")
-    print(" " * 19 + "Quando quiser encerrar, digite 'sair'")
+    print(" " * 22 + "Quando quiser encerrar, digite 'sair'")
     print("="*80)
     print("\n")
     n_questions = 1

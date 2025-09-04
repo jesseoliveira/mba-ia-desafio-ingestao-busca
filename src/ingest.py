@@ -1,3 +1,12 @@
+# ================================================================== #
+# Desafio MBA Engenharia de Software com IA - Full Cycle             #
+# ================================================================== #
+# Autor: Jesse de Oliveira                                           #
+# Email: jesse.oli@hotmail.com                                       #
+# Data: 03/09/2025                                                   #
+# Versão: 1.0.0                                                      #
+# ================================================================== #  
+
 import os
 from pathlib import Path
 from langchain_community.document_loaders import PyPDFLoader

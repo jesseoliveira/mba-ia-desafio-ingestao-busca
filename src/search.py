@@ -1,3 +1,12 @@
+# ================================================================== #
+# Desafio MBA Engenharia de Software com IA - Full Cycle             #
+# ================================================================== #
+# Autor: Jesse de Oliveira                                           #
+# Email: jesse.oli@hotmail.com                                       #
+# Data: 03/09/2025                                                   #
+# Versão: 1.0.0                                                      #
+# ================================================================== # 
+ 
 import os
 from langchain.prompts import ChatPromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
