@@ -1,13 +1,22 @@
 from search import search_prompt
 
 def main():
-    chain = search_prompt()
-
-    if not chain:
-        print("Não foi possível iniciar o chat. Verifique os erros de inicialização.")
-        return
-    
-    pass
+    print("\n")
+    print("="*80)
+    print(" " * 22 + "Bem-vindo ao nosso chat via terminal!")
+    print(" " * 19 + "Quando quiser encerrar, digite 'sair'")
+    print("="*80)
+    print("\n")
+    n_questions = 1
+    while True:
+        question = input(str(n_questions)+") Qual sua dúvida? (digite 'sair' para encerrar): ").lower()
+        if question == "sair":
+            print("\nFoi um prazer conversar com você. Até logo!\n")
+            print("="*80)
+            break
+        response = search_prompt(question)
+        print("Resposta: "+response+"\n")
+        n_questions += 1
 
 if __name__ == "__main__":
     main()

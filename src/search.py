@@ -1,5 +1,13 @@
+import os
+from langchain.prompts import ChatPromptTemplate
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+from langchain_postgres import PGVector
+from dotenv import load_dotenv
+load_dotenv()
+
 PROMPT_TEMPLATE = """
 CONTEXTO:
+Nome da empresa | Faturamento | Ano de fundação
 {contexto}
 
 REGRAS:
@@ -25,5 +33,30 @@ PERGUNTA DO USUÁRIO:
 RESPONDA A "PERGUNTA DO USUÁRIO"
 """
 
-def search_prompt():
-    pass
+embeddings = GoogleGenerativeAIEmbeddings(
+    model=os.getenv("EMBEDDING_MODEL"),
+    google_api_key=os.getenv("GOOGLE_API_KEY")
+)
+
+store = PGVector(
+    embeddings=embeddings,
+    collection_name=os.getenv("PG_VECTOR_COLLECTION_NAME"),
+    connection=os.getenv("DATABASE_URL"),
+    use_jsonb=True,
+)
+
+def search_prompt(pergunta = ""):
+    if not pergunta:
+        return "Nenhuma pergunta foi feita."
+    contexto = ""
+    store_result = store.similarity_search_with_score(pergunta, k=3)
+    for (doc, i) in store_result:
+        contexto += doc.page_content
+    chat_prompt = ChatPromptTemplate.from_messages([PROMPT_TEMPLATE])
+    messages = chat_prompt.format_messages(contexto=contexto, pergunta=pergunta)
+    model = ChatGoogleGenerativeAI(
+        model=os.getenv("LLM_MODEL"),
+        google_api_key=os.getenv("GOOGLE_API_KEY")
+    )
+    result = model.invoke(messages)
+    return result.content
