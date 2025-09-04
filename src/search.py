@@ -65,7 +65,7 @@ def search_prompt(pergunta = ""):
     if not pergunta:
         return "Nenhuma pergunta foi feita."
     contexto = ""
-    store_result = store.similarity_search_with_score(pergunta, k=3)
+    store_result = store.similarity_search_with_score(pergunta, k=10)
     for (doc, i) in store_result:
         contexto += doc.page_content
     chat_prompt = ChatPromptTemplate.from_messages([PROMPT_TEMPLATE])

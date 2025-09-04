@@ -18,7 +18,7 @@ def main():
     print("\n")
     n_questions = 1
     while True:
-        question = input(str(n_questions)+") Qual sua dúvida? (digite 'sair' para encerrar): ").lower()
+        question = input(str(n_questions)+") Faça sua pergunta (digite 'sair' para encerrar): ").lower()
         if question == "sair":
             print("\nFoi um prazer conversar com você. Até logo!\n")
             print("="*80)

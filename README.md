@@ -116,7 +116,7 @@ python src/chat.py
                       Quando quiser encerrar, digite 'sair'
 ================================================================================
 
-1) Qual sua dúvida? (digite 'sair' para encerrar): 
+1) Faça sua pergunta (digite 'sair' para encerrar): 
 ```
 
 ## 💡 Como usar
