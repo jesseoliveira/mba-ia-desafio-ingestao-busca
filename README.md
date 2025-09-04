@@ -53,12 +53,12 @@ pip install -r requirements.txt
    ```env
    # API Google Generative AI
    GOOGLE_API_KEY=sua_chave_api_google_aqui
-   EMBEDDING_MODEL=models/embedding-001
-   LLM_MODEL=gemini-pro
+   EMBEDDING_MODEL=models/text-embedding-004
+   LLM_MODEL=gemini-2.5-flash-lite
 
    # Configurações do Banco de Dados PostgreSQL + pgvector
-   DATABASE_URL=postgresql://postgres:postgres@localhost:5432/rag
-   PG_VECTOR_COLLECTION_NAME=documents
+   DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/rag
+   PG_VECTOR_COLLECTION_NAME=document_chat_collection
 
    # Configurações de Arquivos
    PDF_PATH=.
