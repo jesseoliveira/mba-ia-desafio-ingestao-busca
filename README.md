@@ -95,10 +95,16 @@ python src/ingest.py
 
 **Saída esperada:**
 ```
+================================================================================
+               Desafio MBA Engenharia de Software com IA - Full Cycle
+                            Ingest de Documentos PDF
+================================================================================
 ✅ Documentos processados e armazenados com sucesso!
-Total de chunks: X
-Total de enriched: X
-Coleção: documents
+Arquivo PDF: document.pdf
+Total de chunks: 67
+Total de enriched: 67
+Coleção: document_chat_collection
+================================================================================
 ```
 
 ### 💬 Passo 2: Iniciar o chat interativo

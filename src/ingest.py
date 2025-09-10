@@ -19,6 +19,10 @@ load_dotenv()
 PDF_PATH = os.getenv("PDF_PATH")
 
 def ingest_pdf():
+    print("="*80)
+    print(" " * 15 + "Desafio MBA Engenharia de Software com IA - Full Cycle")
+    print(" " * 28 + "Ingest de Documentos PDF")
+    print("="*80)
     pdf_file = Path(PDF_PATH) / "document.pdf"
     documents = PyPDFLoader(str(pdf_file)).load()
     splits = RecursiveCharacterTextSplitter(
@@ -52,9 +56,11 @@ def ingest_pdf():
     store.add_documents(documents=enriched, ids=ids)
 
     print(f"✅ Documentos processados e armazenados com sucesso!")
+    print(f"Arquivo PDF: {pdf_file}")
     print(f"Total de chunks: {len(splits)}")
     print(f"Total de enriched: {len(enriched)}")
     print(f"Coleção: {os.getenv('PG_VECTOR_COLLECTION_NAME')}")
+    print("="*80)
 
 if __name__ == "__main__":
     ingest_pdf()

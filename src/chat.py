@@ -10,12 +10,11 @@
 from search import search_prompt
 
 def main():
-    print("\n")
     print("="*80)
+    print(" " * 15 + "Desafio MBA Engenharia de Software com IA - Full Cycle")
     print(" " * 22 + "Bem-vindo ao nosso chat via terminal!")
     print(" " * 22 + "Quando quiser encerrar, digite 'sair'")
     print("="*80)
-    print("\n")
     n_questions = 1
     while True:
         question = input(str(n_questions)+") Faça sua pergunta (digite 'sair' para encerrar): ").lower()
